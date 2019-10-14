@@ -1,0 +1,24 @@
+<div class="container-fluid my-4">
+
+    <div class="row">
+        <div class="col-12">
+            <form action="{{ path('driver_index') }}" method="post">
+                <div class="form-group">
+                    <input type="text" name="driverSearch" class="form-control" placeholder="Rechercher un conducteur...">
+                </div>
+                <button class="btn btn-success pull-right">Chercher</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <form action="{{ path('vehicle_index') }}" method="post">
+                <div class="form-group">
+                    <input type="text" name="vehicleSearch" class="form-control" placeholder="Rechercher un vehicule...">
+                </div>
+                <button class="btn btn-success pull-right">Chercher</button>
+            </form>
+        </div>
+    </div>
+
+</div>
