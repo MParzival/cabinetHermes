@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page principale{% endblock %}
+
+{% block body %}
+    <div class="jumbotron text-center">
+        <h1>Cabinet Hermès</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid, at aut commodi doloremque laboriosam
+            officiis possimus praesentium reiciendis repellendus sequi tempora, voluptates, voluptatibus! Ab aut deleniti earum ex facilis magnam modi nulla, numquam omnis,
+            perspiciatis quibusdam rem repellat reprehenderit, sint tenetur unde ut voluptatibus! Deserunt error fugiat officia quaerat.</p>
+    </div>
+
+    <div class="container">
+        <h2>Les biens à la une !</h2>
+        <div class="row flex">
+            {% for property in properties %}
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="{{ path('property_show', {id: property.id, slug: property.slug}) }}">{{ property.title }}</a>
+                            </h5>
+                            <p class="card-text">{{ property.city }} ({{ property.postalCode }})</p>
+                            <div class="text-danger" style="font-weight: bold; font-size: 1.5rem;">{{ property.formatedPrice}} €</div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor%}
+        </div>
+    </div>
+
+{% endblock %}
