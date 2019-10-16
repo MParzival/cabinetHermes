@@ -5,10 +5,18 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link {% if current_menu is defined and current_menu == 'properties' %} active {% endif %}" href="{{ path('property_index') }}">Acheter<span class="sr-only">(current)</span></a>
-            </li>
-        </ul>
+
+        {% if app.user %}
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link {% if current_menu is defined and current_menu == 'properties' %} active {% endif %}" href="{{ path('property_index') }}">Acheter<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <a class="nav-item nav-link" href="{{ path('app_logout') }}">Se deconnecter</a>
+        {% else %}
+            <a class="nav-item nav-link" href="{{ path('app_register') }}">Créer un compte</a>
+            <a class="nav-item nav-link" href="{{ path('app_login') }}">Se connecter</a>
+
+        {% endif %}
     </div>
 </nav>
