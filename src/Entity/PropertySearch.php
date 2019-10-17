@@ -18,6 +18,11 @@ class PropertySearch
     private $minSurface;
 
     /**
+     * @var int|null
+     */
+    private $numeroRef;
+
+    /**
      * @return int|null
      */
     public function getMaxPrice(): ?int
@@ -53,5 +58,21 @@ class PropertySearch
         return $this;
     }
 
+    /**
+     * @return int|null
+     */
+    public function getNumeroRef(): ?int
+    {
+        return $this->numeroRef;
+    }
 
+    /**
+     * @param int|null $numeroRef
+     * @return PropertySearch
+     */
+    public function setNumeroRef(int $numeroRef): PropertySearch
+    {
+        $this->numeroRef = $numeroRef;
+        return $this;
+    }
 }

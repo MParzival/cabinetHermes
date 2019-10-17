@@ -40,6 +40,11 @@ class PropertyRepository extends ServiceEntityRepository
                 ->andWhere('p.surface >= :minsurface')
                 ->setParameter('minsurface', $search->getMinSurface());
         }
+        if ($search->getNumeroRef()){
+            $query = $query
+                ->andWhere('p.id = :id')
+                ->setParameter('id',$search->getNumeroRef() );
+        }
            return $query->getQuery();
     }
 
